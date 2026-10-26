@@ -2,10 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>مصاريفنا</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#155A91">
+<meta name="theme-color" content="#1d4e6b">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
@@ -13,105 +13,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
- --blue:#0879E8;--deep:#155A91;--cyan:#5BC8E8;--pale:#DCEEFF;--lav:#D9DDFB;--in:#14997a;--out:#e0506a;--warm:#F4B67A;
- --ink:#17324F;--mute:#4f657c;--bg1:#cfe6fb;--bg2:#d9ddfb;--bg3:#fbe3cf;
- --g1:rgba(255,255,255,.52);--g2:rgba(255,255,255,.36);--gb:rgba(255,255,255,.65);--sh:0 8px 30px rgba(24,67,110,.12);
- --r1:26px;--r2:16px;--grad:linear-gradient(135deg,#2a9bff,#0879E8 55%,#155A91);
-}
-@media(prefers-color-scheme:dark){:root{
- --ink:#eaf2fb;--mute:#a9bccd;--bg1:#0d2a44;--bg2:#1b2150;--bg3:#3a2a2a;--in:#3fd1a8;--out:#ff8296;
- --g1:rgba(30,50,75,.55);--g2:rgba(30,50,75,.38);--gb:rgba(255,255,255,.16);--sh:0 8px 30px rgba(0,0,0,.35)}}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;min-height:100%}
-body{font-family:Cairo,system-ui,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg1);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:
- radial-gradient(60% 40% at 85% 5%,var(--bg3),transparent 70%),
- radial-gradient(55% 45% at 10% 30%,var(--cyan),transparent 70%),
- radial-gradient(60% 50% at 80% 80%,var(--bg2),transparent 70%),
- linear-gradient(180deg,var(--bg1),var(--bg2));opacity:.9}
-main{max-width:720px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top)) 16px calc(120px + env(safe-area-inset-bottom))}
-h1,h2,h3,p{margin:0}
+:root{--bg:#eef2f4;--card:#fff;--ink:#14212b;--mute:#66767f;--line:#dbe3e7;--in:#0f8a6d;--out:#c8445a;--brand:#1d4e6b}
+@media(prefers-color-scheme:dark){:root{--bg:#10181d;--card:#192329;--ink:#e8eef1;--mute:#93a3ab;--line:#2a373e;--in:#3fc9a3;--out:#ef7a8d;--brand:#6fb3d6}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;line-height:1.6}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1,h2,h3{margin:0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
 button,input,select{font:inherit;color:inherit}
-.glass{background:var(--g1);border:1px solid var(--gb);border-radius:var(--r1);box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,.5);padding:16px;margin-bottom:12px;
- backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
-.glass.s{background:var(--g2);border-radius:var(--r2);padding:12px}
-@supports not (backdrop-filter:blur(1px)){.glass{background:var(--g1);filter:none}:root{--g1:rgba(240,246,252,.94)}}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px}
-.top h2{font-size:1.5rem;font-weight:800}
-.ib{width:42px;height:42px;border-radius:50%;border:1px solid var(--gb);background:var(--g1);cursor:pointer;font-size:1.1rem;display:grid;place-items:center;flex:none}
-.btn{border:0;border-radius:999px;padding:12px 18px;background:var(--grad);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 6px 18px rgba(8,121,232,.35);transition:transform .15s,opacity .15s}
-.btn:active{transform:scale(.97)}.btn:disabled{opacity:.6;cursor:wait}
-.btn.ghost{background:var(--g2);color:var(--ink);border:1px solid var(--gb);box-shadow:none}
-.btn.bad{background:linear-gradient(135deg,#ff8aa0,#e0506a)}
-.btn.w{width:100%}
-.link{background:none;border:0;color:var(--mute);cursor:pointer;padding:4px 8px}
-label{display:block;font-weight:600;margin:6px 4px 4px;font-size:.9rem}
-input,select{width:100%;padding:12px 14px;border:1px solid var(--gb);border-radius:var(--r2);background:var(--g2);margin-bottom:8px;color:var(--ink)}
-input::placeholder{color:var(--mute)}
-select option{color:#17324F}
-:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+input,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);margin-bottom:10px}
+button{border:0;border-radius:10px;padding:10px 16px;background:var(--brand);color:#fff;font-weight:600;cursor:pointer}
+button.ghost{background:transparent;color:var(--brand);border:1px solid var(--line)}
+button.link{background:none;color:var(--mute);padding:4px 8px;font-weight:400}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 .row{display:flex;gap:8px}.row>*{flex:1}
-.mute{color:var(--mute);font-size:.85rem}
+.acc{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.acc b{font-size:1.5rem}
+.tag{font-size:.75rem;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:0 8px;margin-right:6px;color:var(--mute)}
 .in{color:var(--in)}.out{color:var(--out)}
-.err{color:var(--out);min-height:1.5em;font-size:.9rem;font-weight:600}
-.big{font-size:2.3rem;font-weight:800;line-height:1.3}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid2>.glass{margin:0}
-.ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;background:var(--pale);flex:none}
-.item{display:flex;align-items:center;gap:12px;cursor:pointer}
-.item .mid{flex:1;min-width:0}
-.item b.n{display:block;font-size:1.05rem}
-.tag{font-size:.72rem;background:var(--g2);border:1px solid var(--gb);border-radius:20px;padding:0 8px;margin-inline-start:6px;color:var(--mute)}
-.st{background:linear-gradient(135deg,rgba(255,138,160,.55),rgba(240,100,125,.35))}
-.si{background:linear-gradient(135deg,rgba(80,215,170,.55),rgba(32,184,137,.35))}
-.donut{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.ring{width:130px;height:130px;border-radius:50%;flex:none;-webkit-mask:radial-gradient(circle,transparent 38px,#000 39px);mask:radial-gradient(circle,transparent 38px,#000 39px)}
-.leg{flex:1;min-width:160px}.leg div{display:flex;align-items:center;gap:8px;font-size:.88rem;padding:2px 0}
-.dot{width:10px;height:10px;border-radius:50%;flex:none}.leg span.p{margin-inline-start:auto;font-weight:700}
-.tx{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--gb)}.tx:last-child{border:0}
-.tx .mid{flex:1;min-width:0}.tx .amt{font-weight:800;white-space:nowrap}
-.seg{display:flex;padding:4px;gap:4px;background:var(--g2);border:1px solid var(--gb);border-radius:999px;margin-bottom:12px}
-.seg button{flex:1;border:0;border-radius:999px;padding:8px;background:none;cursor:pointer;font-weight:700;color:var(--mute)}
-.seg button.on{background:var(--g1);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center}
+.sum div{background:var(--bg);border-radius:10px;padding:8px}
+.big{font-size:2.2rem;font-weight:800;text-align:center;margin:4px 0 10px}
+.tx{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.tx:last-child{border:0}
+.mute{color:var(--mute);font-size:.85rem}
+.err{color:var(--out);min-height:1.5em;font-size:.9rem}
+.seg{display:flex;margin-bottom:10px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{flex:1;border-radius:0;background:var(--bg);color:var(--mute)}
 .seg button.on.e{background:var(--out);color:#fff}.seg button.on.i{background:var(--in);color:#fff}
-.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:4px}
-.tabs a{white-space:nowrap;padding:6px 14px;border-radius:20px;border:1px solid var(--gb);background:var(--g2);color:var(--ink);text-decoration:none}
-.tabs a.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.chips button{border:1px solid var(--gb);background:var(--g2);border-radius:999px;padding:4px 14px;cursor:pointer;font-weight:600}
-.chips button.on{background:var(--deep);color:#fff}
-.av{width:40px;height:40px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
-nav.bar{position:fixed;inset-inline:0;bottom:calc(10px + env(safe-area-inset-bottom));margin:0 auto;width:min(94vw,440px);display:flex;align-items:flex-end;justify-content:space-around;
- padding:8px 6px;background:var(--g1);border:1px solid var(--gb);border-radius:30px;box-shadow:var(--sh);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);z-index:20}
-nav.bar button{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;font-size:.72rem;color:var(--mute);padding:4px 8px;min-width:56px;font-weight:600}
-nav.bar button span{font-size:1.3rem}nav.bar button.on{color:var(--blue)}
-nav.bar button.plus{width:58px;height:58px;border-radius:50%;background:var(--grad);color:#fff;margin-top:-30px;justify-content:center;box-shadow:0 8px 20px rgba(8,121,232,.45);border:3px solid var(--gb);font-size:1.8rem;min-width:58px;padding:0}
-.ov{position:fixed;inset:0;background:rgba(10,30,50,.4);z-index:40;display:flex;align-items:flex-end;justify-content:center}
-.sheet{width:min(100%,520px);max-height:92vh;overflow:auto;margin:0;border-radius:var(--r1) var(--r1) 0 0;padding-bottom:calc(20px + env(safe-area-inset-bottom));background:var(--g1);--g1:rgba(240,247,255,.82)}
-@media(prefers-color-scheme:dark){.sheet{--g1:rgba(22,38,58,.88)}}
-@media(min-width:700px){.ov{align-items:center}.sheet{border-radius:var(--r1)}}
-.logo{width:92px;height:92px;border-radius:26px;background:var(--grad);display:grid;place-items:center;font-size:2.6rem;margin:36px auto 10px;box-shadow:0 12px 30px rgba(8,121,232,.4)}
-@media(max-width:360px){.big{font-size:1.9rem}.grid2{gap:8px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.chips{flex-wrap:wrap;margin-bottom:10px}.chips button{flex:none;padding:2px 12px;font-size:.85rem}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:4px}.tabs a{white-space:nowrap;padding:6px 14px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none}.tabs a.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <main id="app"></main>
-<div id="nav"></div>
-<div id="modal"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
+// === غيّر القيمتين دول من Supabase: Project Settings > API ===
 const SUPABASE_URL = "https://ikdaevodinllnrelvsxi.supabase.co";
 const SUPABASE_KEY = "sb_publishable_P28yhr1KLFUJoUuyf_aqMw_TtAx4EeG";
+// =============================================================
 
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 const app = document.getElementById("app");
 const CATS = ["أكل","مواصلات","فواتير","بيت","صحة","ترفيه","مرتب","أخرى"];
-const CI = {"أكل":"🍽️","مواصلات":"🚌","فواتير":"💡","بيت":"🏠","صحة":"💊","ترفيه":"🎬","مرتب":"💼","أخرى":"✨"};
-const CC = ["#F16B83","#20B889","#F4B67A","#8b7bf0","#0879E8","#5BC8E8","#9aa8b5","#d86ad0"];
-let user = null, kind = "expense", sub = "sum", hide = false, saving = false;
-let S = {acc:[], mem:[], tx:[], inv:[]}, flt = {q:"", k:"all", c:""};
+let user = null, kind = "expense";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const money = n => Number(n).toLocaleString("ar-EG", {maximumFractionDigits: 2});
@@ -120,319 +68,141 @@ const $ = id => document.getElementById(id);
 const fail = e => { const el = $("err"); if (el) el.textContent = e.message || e; };
 
 db.auth.onAuthStateChange((_e, session) => { user = session?.user ?? null; route(); });
-
-// Offline-first layer: cached account data + durable transaction outbox.
-const cacheKey = () => `masarefni_cache_v1_${user?.id || "guest"}`;
-const queueKey = () => `masarefni_outbox_v1_${user?.id || "guest"}`;
-const readJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; } catch { return fallback; } };
-const writeJSON = (key, value) => localStorage.setItem(key, JSON.stringify(value));
-const isOnline = () => navigator.onLine;
-function cacheState() { writeJSON(cacheKey(), {S, savedAt: Date.now(), user: {id:user?.id,email:user?.email}}); }
-function setOfflineNotice() {
-  let el = document.getElementById("offline-notice");
-  if (!el) { el = document.createElement("div"); el.id = "offline-notice"; el.style.cssText = "position:fixed;top:env(safe-area-inset-top,0);left:10px;right:10px;z-index:100;background:#17324F;color:white;padding:8px 12px;border-radius:12px;text-align:center;font:600 13px Cairo, sans-serif;"; document.body.appendChild(el); }
-  const q = readJSON(queueKey(), []);
-  el.textContent = isOnline() ? (q.length ? `متصل بالإنترنت • ${q.length} معاملة في انتظار المزامنة` : "متصل بالإنترنت") : `وضع بدون إنترنت • ${q.length} معاملة غير متزامنة`;
-  el.style.background = isOnline() ? (q.length ? "#8a5a00" : "#176b54") : "#17324F";
-}
-async function syncOutbox() {
-  if (!user || !isOnline()) { setOfflineNotice(); return; }
-  const queue = readJSON(queueKey(), []);
-  if (!queue.length) { setOfflineNotice(); return; }
-  const remaining = [];
-  for (const row of queue) {
-    try {
-      const {error} = await db.from("transactions").insert(row);
-      // 23505 means this stable transaction ID already exists, so don't duplicate it.
-      if (error && error.code !== "23505") remaining.push(row);
-    } catch { remaining.push(row); }
-  }
-  writeJSON(queueKey(), remaining);
-  setOfflineNotice();
-}
-window.addEventListener("online", async () => { await syncOutbox(); if (user) route(); });
-window.addEventListener("offline", setOfflineNotice);
-
-window.addEventListener("hashchange", () => { sub = "sum"; route(); });
-
-async function load() {
-  // Refresh the outbox first when connectivity is available.
-  await syncOutbox();
-  if (!isOnline()) {
-    const cached = readJSON(cacheKey(), null);
-    if (!cached?.S) throw new Error("مفيش بيانات محفوظة على الموبايل لسه. افتح التطبيق بالإنترنت وسجّل دخولك مرة واحدة.");
-    S = cached.S;
-    setOfflineNotice();
-    return;
-  }
-  const [a, i, m, t] = await Promise.all([
-    db.from("accounts").select("id,name,owner_id").order("created_at"),
-    db.from("account_members").select("id,account_id,accounts(name)").eq("status","pending").eq("email", user.email.toLowerCase()),
-    db.from("account_members").select("id,account_id,user_id,email,role,status"),
-    db.from("transactions").select("*").order("date",{ascending:false}).order("created_at",{ascending:false})
-  ]);
-  const e = [a,i,m,t].find(r => r.error);
-  if (e) {
-    const cached = readJSON(cacheKey(), null);
-    if (cached?.S) { S = cached.S; setOfflineNotice(); return; }
-    throw e.error;
-  }
-  const pend = new Set((i.data||[]).map(x => x.account_id));
-  const mem = m.data || [];
-  const mine = (a.data||[]).filter(x => !pend.has(x.id) && (x.owner_id === user.id || mem.some(y => y.account_id === x.id && y.user_id === user.id && y.status === "accepted")));
-  const onlineTx = (t.data||[]).filter(x => mine.some(y => y.id === x.account_id));
-  const queued = readJSON(queueKey(), []).filter(x => mine.some(y => y.id === x.account_id));
-  const txById = new Map(); [...onlineTx, ...queued].forEach(x => txById.set(x.id, x));
-  S = {acc: mine, mem, tx: [...txById.values()].sort((x,y) => String(y.date||"").localeCompare(String(x.date||""))), inv: i.data || []};
-  cacheState(); setOfflineNotice();
-}
-const net = list => list.reduce((s,t) => s + (t.kind === "income" ? 1 : -1) * Number(t.amount), 0);
-const sumK = (list,k) => list.filter(t => t.kind === k).reduce((s,t) => s + Number(t.amount), 0);
-const members = id => S.mem.filter(m => m.account_id === id);
-const accName = id => (S.acc.find(a => a.id === id) || {}).name || "";
-const mask = v => hide ? "••••" : money(v);
+window.addEventListener("hashchange", route);
 
 function route() {
-  if (!user) { $("nav").innerHTML = ""; return authView(); }
-  app.innerHTML = `<p class="mute" style="padding:40px;text-align:center">بحمّل...</p>`;
-  load().then(draw).catch(e => { app.innerHTML = `<div class="glass"><p class="err">حصلت مشكلة في تحميل البيانات: ${esc(e.message)}</p><button class="btn" onclick="route()">إعادة المحاولة</button></div>`; });
-}
-function draw() {
-  const h = location.hash, m = h.match(/^#\/a\/(.+)$/);
-  if (m) { nav(""); return accountView(m[1]); }
-  if (h === "#/tx") { nav("tx"); return txView(); }
-  if (h === "#/acc") { nav("acc"); return accountsView(); }
-  if (h === "#/more") { nav("more"); return moreView(); }
-  nav("home"); homeView();
-}
-function nav(on) {
-  const b = (k, ic, t, go) => `<button class="${on === k ? "on" : ""}" data-go="${go}" aria-label="${t}" ${on === k ? 'aria-current="page"' : ""}><span aria-hidden="true">${ic}</span>${t}</button>`;
-  $("nav").innerHTML = `<nav class="bar" aria-label="التنقل الرئيسي">${b("home","🏠","الرئيسية","#")}${b("tx","🧾","المعاملات","#/tx")}<button class="plus" id="fab" aria-label="إضافة معاملة">+</button>${b("acc","👛","الحسابات","#/acc")}${b("more","⋯","المزيد","#/more")}</nav>`;
-  document.querySelectorAll("#nav [data-go]").forEach(x => x.onclick = () => { location.hash = x.dataset.go; if (!x.dataset.go) route(); });
-  $("fab").onclick = () => openSheet();
+  if (!user) return authView();
+  const m = location.hash.match(/^#\/a\/(.+)$/);
+  m ? accountView(m[1]) : homeView();
 }
 
-/* ---------- AUTH ---------- */
 function authView() {
   app.innerHTML = `
-    <div class="logo" aria-hidden="true">👛</div>
-    <h1 style="text-align:center;font-size:2.2rem;font-weight:800">مصاريفنا</h1>
-    <p class="mute" style="text-align:center;margin-bottom:20px">مع بعض .. تتحكم في مصاريفنا</p>
-    <form class="glass" id="af" novalidate>
-      <label for="em">الإيميل</label><input id="em" type="email" placeholder="example@domain.com" autocomplete="email" dir="ltr">
-      <label for="pw">الباسورد</label><input id="pw" type="password" placeholder="6 حروف على الأقل" autocomplete="current-password" dir="ltr">
-      <p class="err" id="err" role="alert"></p>
-      <button class="btn w" id="login" type="submit">دخول</button>
-      <button class="btn ghost w" id="signup" type="button" style="margin-top:8px">حساب جديد</button>
-    </form>`;
+    <h1 style="margin:40px 0 4px">مصاريفنا</h1>
+    <p class="mute" style="margin-bottom:20px">سجّل الدخل والصرف لوحدك أو مع حد.</p>
+    <div class="card">
+      <input id="em" type="email" placeholder="الإيميل" autocomplete="email">
+      <input id="pw" type="password" placeholder="الباسورد (6 حروف على الأقل)" autocomplete="current-password">
+      <p class="err" id="err"></p>
+      <div class="row"><button id="login">دخول</button><button class="ghost" id="signup">حساب جديد</button></div>
+    </div>`;
   const creds = () => ({email: $("em").value.trim().toLowerCase(), password: $("pw").value});
-  const busy = v => { $("login").disabled = $("signup").disabled = v; };
-  $("af").onsubmit = async e => { e.preventDefault(); busy(true); const {error} = await db.auth.signInWithPassword(creds()); busy(false); if (error) fail(error); };
+  $("login").onclick = async () => { const {error} = await db.auth.signInWithPassword(creds()); if (error) fail(error); };
   $("signup").onclick = async () => {
-    busy(true); const {data, error} = await db.auth.signUp(creds()); busy(false);
+    const {data, error} = await db.auth.signUp(creds());
     if (error) return fail(error);
     if (!data.session) fail("اتبعتلك إيميل تأكيد. أكّده وبعدين ادخل.");
   };
 }
 
-/* ---------- components ---------- */
-const accRow = a => {
-  const b = net(S.tx.filter(t => t.account_id === a.id)), n = members(a.id).filter(m => m.status === "accepted").length;
-  return `<div class="glass item" tabindex="0" role="link" data-go="${a.id}"><div class="ic" aria-hidden="true">${a.owner_id === user.id ? "🏠" : "🤝"}</div>
-    <div class="mid"><b class="n">${esc(a.name)}</b><span class="mute">${n > 1 ? `مشترك • ${n} أعضاء` : "خاص"}</span></div>
-    <b class="${b >= 0 ? "in" : "out"}">${money(b)}</b><span class="mute" aria-hidden="true">‹</span></div>`;
-};
-const txRow = (t, canDel, showAcc) => `<div class="tx"><div class="ic" aria-hidden="true" style="background:${t.kind === "income" ? "rgba(32,184,137,.25)" : "rgba(241,107,131,.25)"}">${CI[t.category] || "✨"}</div>
-  <div class="mid"><b>${esc(t.category || "")}</b> <span class="mute">${esc(t.note || "")}</span><br><span class="mute">${esc(t.date)}${showAcc ? " • " + esc(accName(t.account_id)) : ""}</span></div>
-  <div style="text-align:left"><span class="amt ${t.kind === "income" ? "in" : "out"}">${t.kind === "income" ? "+" : "−"}${money(t.amount)}</span>
-  ${canDel ? `<br><button class="link" data-del="${t.id}" aria-label="حذف المعاملة">حذف</button>` : ""}</div></div>`;
-function donut(list) {
-  const by = {}; list.filter(t => t.kind === "expense").forEach(t => by[t.category || "أخرى"] = (by[t.category || "أخرى"] || 0) + Number(t.amount));
-  const ent = Object.entries(by).sort((a,b) => b[1] - a[1]), tot = ent.reduce((s,e) => s + e[1], 0);
-  if (!tot) return `<p class="mute">مفيش مصروفات لسه.</p>`;
-  let acc = 0; const stops = ent.map(([c,v],i) => { const s = acc; acc += v / tot * 100; return `${CC[i % CC.length]} ${s}% ${acc}%`; });
-  return `<div class="donut"><div class="ring" role="img" aria-label="توزيع المصروفات" style="background:conic-gradient(${stops.join(",")})"></div>
-    <div class="leg">${ent.map(([c,v],i) => `<div><span class="dot" style="background:${CC[i % CC.length]}"></span>${esc(c)}<span class="p">${Math.round(v / tot * 100)}% • ${money(v)}</span></div>`).join("")}</div></div>`;
-}
-function wire() {
+async function homeView() {
+  app.innerHTML = `<p class="mute">بحمّل...</p>`;
+  const [acc, inv, mem, tx] = await Promise.all([
+    db.from("accounts").select("id,name,owner_id").order("created_at"),
+    db.from("account_members").select("id,account_id,accounts(name)").eq("status","pending").eq("email", user.email.toLowerCase()),
+    db.from("account_members").select("account_id"),
+    db.from("transactions").select("account_id,kind,amount")
+  ]);
+  const myAcc = (acc.data || []).filter(a => !(inv.data || []).some(i => i.account_id === a.id) || a.owner_id === user.id || (mem.data||[]).some(m => m.account_id === a.id));
+  const bal = {}, cnt = {};
+  (tx.data || []).forEach(t => bal[t.account_id] = (bal[t.account_id] || 0) + (t.kind === "income" ? 1 : -1) * Number(t.amount));
+  (mem.data || []).forEach(m => cnt[m.account_id] = (cnt[m.account_id] || 0) + 1);
+  const invHtml = (inv.data || []).map(i => `
+    <div class="card"><b>دعوة لحساب: ${esc(i.accounts?.name || "")}</b>
+      <div class="row" style="margin-top:8px"><button data-ok="${i.id}">قبول</button><button class="ghost" data-no="${i.id}">رفض</button></div></div>`).join("");
+  const accHtml = myAcc.filter(a => (mem.data || []).some(m => m.account_id === a.id) && !(inv.data || []).some(i => i.account_id === a.id)).map(a => {
+    const b = bal[a.id] || 0;
+    return `<div class="card acc" tabindex="0" role="link" data-go="${a.id}">
+      <div><b style="font-size:1.1rem">${esc(a.name)}</b>${cnt[a.id] > 1 ? '<span class="tag">مشترك</span>' : ""}</div>
+      <b class="${b >= 0 ? "in" : "out"}">${money(b)}</b></div>`;
+  }).join("");
+  app.innerHTML = `
+    <div class="top"><h2>حساباتي</h2><button class="link" id="out">خروج</button></div>
+    ${invHtml}${accHtml || '<p class="mute">لسه معندكش حسابات. اعمل أول حساب من تحت.</p>'}
+    <div class="card"><h3 style="margin-bottom:8px">حساب جديد</h3><input id="nm" placeholder="اكتب اسم الحساب"><div class="row chips"><button class="ghost" data-n="حساب البيت">البيت</button><button class="ghost" data-n="حساب الشغل">الشغل</button><button class="ghost" data-n="حساب الاستثمار">الاستثمار</button></div><p class="err" id="err"></p><button id="add">إضافة حساب</button></div>`;
+  $("out").onclick = () => db.auth.signOut();
   document.querySelectorAll("[data-go]").forEach(el => {
-    if (el.closest("#nav")) return;
     const go = () => location.hash = "#/a/" + el.dataset.go;
     el.onclick = go; el.onkeydown = e => e.key === "Enter" && go();
   });
-  document.querySelectorAll("[data-del]").forEach(b => b.onclick = async () => {
-    if (!confirm("تمسح المعاملة دي؟")) return;
-    const {error} = await db.from("transactions").delete().eq("id", b.dataset.del);
-    error ? alert(error.message) : route();
-  });
-}
-
-/* ---------- HOME ---------- */
-function homeView() {
-  const mo = today().slice(0, 7), cur = S.tx.filter(t => String(t.date).startsWith(mo));
-  const name = user.user_metadata?.full_name || user.user_metadata?.name;
-  app.innerHTML = `
-    <div class="top"><h2>${name ? "مرحباً، " + esc(name) : "مرحباً"}</h2><button class="ib" id="out" aria-label="تسجيل الخروج">⎋</button></div>
-    <div class="glass"><div class="row" style="align-items:center;justify-content:space-between;flex:none"><span class="mute">الرصيد الكلي</span><button class="ib" id="eye" aria-label="إظهار أو إخفاء الرصيد" style="width:34px;height:34px">${hide ? "🙈" : "👁"}</button></div>
-      <div class="big ${net(S.tx) >= 0 ? "in" : "out"}">${mask(net(S.tx))}</div><span class="mute">من كل حساباتك</span></div>
-    <div class="grid2" style="margin-bottom:12px">
-      <div class="glass si"><span class="mute">الدخل</span><div class="big in" style="font-size:1.5rem">${mask(sumK(S.tx,"income"))}</div></div>
-      <div class="glass st"><span class="mute">المصروفات</span><div class="big out" style="font-size:1.5rem">${mask(sumK(S.tx,"expense"))}</div></div></div>
-    <div class="glass"><h3 style="margin-bottom:10px">ملخص الشهر الحالي</h3>${donut(cur)}</div>
-    <div class="top" style="margin-top:16px"><h3>حساباتي</h3><button class="link" id="all" style="color:var(--blue)">عرض الكل</button></div>
-    ${S.acc.slice(0,3).map(accRow).join("") || '<p class="mute">لسه معندكش حسابات.</p>'}`;
-  $("out").onclick = () => db.auth.signOut();
-  $("eye").onclick = () => { hide = !hide; homeView(); };
-  $("all").onclick = () => location.hash = "#/acc";
-  wire();
-}
-
-/* ---------- ACCOUNTS ---------- */
-function accountsView() {
-  app.innerHTML = `
-    <div class="top"><h2>حساباتي</h2><button class="ib" id="new" aria-label="حساب جديد">+</button></div>
-    ${S.inv.length ? `<h3 style="margin:4px 4px 8px">دعوات معلقة <span class="tag">${S.inv.length}</span></h3>` + S.inv.map(i => `
-      <div class="glass"><b>دعوة لحساب: ${esc(i.accounts?.name || "")}</b>
-      <div class="row" style="margin-top:10px"><button class="btn" data-ok="${i.id}">قبول</button><button class="btn ghost" data-no="${i.id}">رفض</button></div></div>`).join("") : ""}
-    ${S.acc.map(accRow).join("") || '<p class="mute">لسه معندكش حسابات. اعمل أول حساب بزرار +.</p>'}
-    <div class="glass" id="nf" hidden><h3 style="margin-bottom:8px">حساب جديد</h3>
-      <label for="nm">اسم الحساب</label><input id="nm" placeholder="اكتب اسم الحساب">
-      <div class="chips"><button type="button" data-n="حساب البيت">البيت</button><button type="button" data-n="حساب الشغل">الشغل</button><button type="button" data-n="حساب الاستثمار">الاستثمار</button></div>
-      <p class="err" id="err" role="alert"></p><button class="btn w" id="add">إضافة حساب</button></div>`;
-  $("new").onclick = () => { $("nf").hidden = !$("nf").hidden; $("nm").focus(); };
   document.querySelectorAll("[data-ok]").forEach(b => b.onclick = async () => {
     const {error} = await db.from("account_members").update({user_id: user.id, status: "accepted"}).eq("id", b.dataset.ok);
-    error ? alert(error.message) : route();
+    error ? alert(error.message) : homeView();
   });
   document.querySelectorAll("[data-no]").forEach(b => b.onclick = async () => {
-    const {error} = await db.from("account_members").delete().eq("id", b.dataset.no);
-    error ? alert(error.message) : route();
+    await db.from("account_members").delete().eq("id", b.dataset.no); homeView();
   });
   document.querySelectorAll("[data-n]").forEach(b => b.onclick = () => { $("nm").value = b.dataset.n; $("nm").focus(); });
   $("add").onclick = async () => {
     const name = $("nm").value.trim(); if (!name) return fail("اكتب اسم الحساب");
-    $("add").disabled = true;
     const {data, error} = await db.rpc("create_account", {acc_name: name});
-    $("add").disabled = false;
     error ? fail(error) : location.hash = "#/a/" + data;
   };
-  wire();
 }
 
-/* ---------- TRANSACTIONS ---------- */
-function txView() {
+async function accountView(id) {
+  app.innerHTML = `<p class="mute">بحمّل...</p>`;
+  const [a, tx, mem, tabs] = await Promise.all([
+    db.from("accounts").select("id,name,owner_id").eq("id", id).maybeSingle(),
+    db.from("transactions").select("*").eq("account_id", id).order("date", {ascending: false}).order("created_at", {ascending: false}),
+    db.from("account_members").select("id,email,role,status").eq("account_id", id),
+    db.from("account_members").select("accounts(id,name)").eq("user_id", user.id).eq("status", "accepted")
+  ]);
+  if (!a.data) { location.hash = ""; return; }
+  const isOwner = a.data.owner_id === user.id, list = tx.data || [], members = mem.data || [];
+  const inc = list.filter(t => t.kind === "income").reduce((s, t) => s + Number(t.amount), 0);
+  const exp = list.filter(t => t.kind === "expense").reduce((s, t) => s + Number(t.amount), 0);
+  const who = {}; members.forEach(m => who[m.email] = m);
   app.innerHTML = `
-    <div class="top"><h2>المعاملات</h2><button class="ib" id="n2" aria-label="إضافة معاملة">+</button></div>
-    <label for="q" class="mute">بحث</label><input id="q" type="search" placeholder="ابحث عن معاملة..." value="${esc(flt.q)}">
-    <div class="chips" role="group" aria-label="تصفية">${[["all","الكل"],["income","دخل"],["expense","مصروف"]].map(([k,t]) => `<button data-k="${k}" class="${flt.k === k ? "on" : ""}" aria-pressed="${flt.k === k}">${t}</button>`).join("")}</div>
-    <label for="fc" class="mute">التصنيف</label><select id="fc"><option value="">كل التصنيفات</option>${CATS.map(c => `<option ${flt.c === c ? "selected" : ""}>${c}</option>`).join("")}</select>
-    <div class="glass" id="lst"></div>`;
-  const paint = () => {
-    const q = flt.q.trim().toLowerCase();
-    const l = S.tx.filter(t => (flt.k === "all" || t.kind === flt.k) && (!flt.c || t.category === flt.c) && (!q || `${t.category} ${t.note || ""} ${accName(t.account_id)}`.toLowerCase().includes(q)));
-    $("lst").innerHTML = l.map(t => txRow(t, t.user_id === user.id || S.acc.find(a => a.id === t.account_id)?.owner_id === user.id, true)).join("") || '<p class="mute">مفيش معاملات مطابقة.</p>';
-    wire();
-  };
-  let tm; $("q").oninput = e => { clearTimeout(tm); tm = setTimeout(() => { flt.q = e.target.value; paint(); }, 200); };
-  $("fc").onchange = e => { flt.c = e.target.value; paint(); };
-  document.querySelectorAll("[data-k]").forEach(b => b.onclick = () => { flt.k = b.dataset.k; txView(); });
-  $("n2").onclick = () => openSheet();
-  paint();
-}
-
-/* ---------- MORE ---------- */
-function moreView() {
-  app.innerHTML = `<div class="top"><h2>المزيد</h2></div>
-    <div class="glass item" style="cursor:default"><div class="av" aria-hidden="true">${esc((user.email || "?")[0].toUpperCase())}</div><div class="mid"><b class="n">حسابي</b><span class="mute" dir="ltr">${esc(user.email)}</span></div></div>
-    <button class="btn bad w" id="out">تسجيل الخروج</button>`;
-  $("out").onclick = () => db.auth.signOut();
-}
-
-/* ---------- ACCOUNT DETAILS ---------- */
-function accountView(id) {
-  const a = S.acc.find(x => x.id === id);
-  if (!a) { location.hash = ""; return; }
-  const isOwner = a.owner_id === user.id, list = S.tx.filter(t => t.account_id === id), mem = members(id);
-  const inc = sumK(list,"income"), exp = sumK(list,"expense");
-  let body = "";
-  if (sub === "sum") body = `
-    <div class="glass"><span class="mute">الرصيد الحالي</span><div class="big ${inc - exp >= 0 ? "in" : "out"}">${money(inc - exp)}</div></div>
-    <div class="grid2" style="margin-bottom:12px"><div class="glass si"><span class="mute">الدخل</span><br><b class="in">+${money(inc)}</b></div><div class="glass st"><span class="mute">المصروفات</span><br><b class="out">−${money(exp)}</b></div></div>
-    <div class="glass"><h3 style="margin-bottom:10px">توزيع المصروفات</h3>${donut(list)}</div>
-    <button class="btn w" id="addtx">＋ إضافة معاملة</button>`;
-  if (sub === "tx") body = `<div class="glass"><h3 style="margin-bottom:6px">المعاملات</h3>${list.map(t => txRow(t, t.user_id === user.id || isOwner, false)).join("") || '<p class="mute">مفيش معاملات لسه.</p>'}</div>`;
-  if (sub === "mem") body = `<div class="glass"><h3 style="margin-bottom:6px">الأعضاء</h3>
-    ${mem.map(m => `<div class="tx"><div class="av" aria-hidden="true">${esc((m.email || "?")[0].toUpperCase())}</div><div class="mid"><span dir="ltr">${esc(m.email)}</span>${m.role === "owner" ? '<span class="tag">المالك</span>' : ""}${m.status === "pending" ? '<span class="tag">في انتظار القبول</span>' : ""}</div>
-      ${isOwner && m.role !== "owner" ? `<button class="link" data-rm="${m.id}">إزالة</button>` : ""}</div>`).join("")}
-    ${isOwner ? `<label for="inv">إيميل الشخص</label><input id="inv" type="email" dir="ltr" placeholder="name@example.com"><p class="err" id="err" role="alert"></p><button id="send" class="btn w">إرسال دعوة</button>` : ""}</div>
-    ${isOwner ? '<button class="btn bad w" id="delacc">حذف الحساب بالكامل</button>' : ""}`;
-  app.innerHTML = `
-    <div class="top"><button class="ib" id="back" aria-label="رجوع">›</button><h2>${esc(a.name)}</h2><div class="ic" aria-hidden="true">${isOwner ? "🏠" : "🤝"}</div></div>
-    <nav class="tabs" aria-label="الحسابات">${S.acc.map(t => `<a href="#/a/${t.id}" class="${t.id === id ? "on" : ""}">${esc(t.name)}</a>`).join("")}<a href="#/acc">+ حساب</a></nav>
-    <div class="seg" role="tablist">${[["sum","ملخص"],["tx","المعاملات"],["mem","الأعضاء"]].map(([k,t]) => `<button role="tab" aria-selected="${sub === k}" class="${sub === k ? "on" : ""}" data-s="${k}">${t}</button>`).join("")}</div>
-    ${body}`;
+    <div class="top"><button class="link" id="back">رجوع</button><h2>${esc(a.data.name)}</h2><span></span></div>
+    <nav class="tabs">${(tabs.data || []).map(t => t.accounts).filter(Boolean).map(t => `<a href="#/a/${t.id}" class="${t.id === id ? "on" : ""}">${esc(t.name)}</a>`).join("")}<a href="#">+ حساب</a></nav>
+    <div class="card"><p class="mute" style="text-align:center;margin:0">رصيد ${esc(a.data.name)} فقط</p>
+      <div class="big ${inc - exp >= 0 ? "in" : "out"}">${money(inc - exp)}</div>
+      <div class="sum"><div><span class="mute">دخل</span><br><b class="in">${money(inc)}</b></div><div><span class="mute">صرف</span><br><b class="out">${money(exp)}</b></div></div></div>
+    <div class="card">
+      <div class="seg"><button id="kE" class="e">مصروف</button><button id="kI" class="i">دخل</button></div>
+      <input id="amt" type="number" inputmode="decimal" min="0" step="0.01" placeholder="المبلغ">
+      <select id="cat">${CATS.map(c => `<option>${c}</option>`).join("")}</select>
+      <input id="dt" type="date" value="${today()}">
+      <input id="note" placeholder="ملاحظة (اختياري)">
+      <p class="err" id="err"></p><button id="save" style="width:100%">حفظ</button></div>
+    <div class="card"><h3 style="margin-bottom:6px">المعاملات</h3>
+      ${list.map(t => `<div class="tx"><div><b>${esc(t.category || "")}</b> <span class="mute">${esc(t.note || "")}</span><br>
+        <span class="mute">${esc(t.date)}</span></div>
+        <div style="text-align:left"><b class="${t.kind === "income" ? "in" : "out"}">${t.kind === "income" ? "+" : "-"}${money(t.amount)}</b>
+        ${(t.user_id === user.id || isOwner) ? `<br><button class="link" data-del="${t.id}">حذف</button>` : ""}</div></div>`).join("") || '<p class="mute">مفيش معاملات لسه.</p>'}</div>
+    <div class="card"><h3 style="margin-bottom:6px">الأعضاء</h3>
+      ${members.map(m => `<div class="tx"><span>${esc(m.email)}${m.role === "owner" ? '<span class="tag">المالك</span>' : ""}${m.status === "pending" ? '<span class="tag">في انتظار القبول</span>' : ""}</span>
+        ${isOwner && m.role !== "owner" ? `<button class="link" data-rm="${m.id}">إزالة</button>` : ""}</div>`).join("")}
+      ${isOwner ? `<input id="inv" type="email" placeholder="إيميل الشخص" style="margin-top:10px"><button id="send" class="ghost" style="width:100%">إرسال دعوة</button>` : ""}</div>
+    ${isOwner ? '<button class="link" id="delacc" style="color:var(--out)">حذف الحساب بالكامل</button>' : ""}`;
   $("back").onclick = () => location.hash = "";
-  document.querySelectorAll("[data-s]").forEach(b => b.onclick = () => { sub = b.dataset.s; accountView(id); });
-  if ($("addtx")) $("addtx").onclick = () => openSheet(id);
-  document.querySelectorAll("[data-rm]").forEach(b => b.onclick = async () => {
-    if (!confirm("تشيل العضو ده؟")) return;
-    const {error} = await db.from("account_members").delete().eq("id", b.dataset.rm);
-    error ? alert(error.message) : route();
-  });
-  if ($("delacc")) $("delacc").onclick = async () => {
-    if (!confirm("هيتمسح الحساب وكل معاملاته لكل الأعضاء. متأكد؟")) return;
-    const {error} = await db.from("accounts").delete().eq("id", id);
-    error ? alert(error.message) : (location.hash = "", route());
-  };
-  if ($("send")) $("send").onclick = async () => {
-    const email = $("inv").value.trim().toLowerCase(); if (!/^\S+@\S+\.\S+$/.test(email)) return fail("اكتب إيميل صحيح");
-    $("send").disabled = true;
-    const {error} = await db.from("account_members").insert({account_id: id, email, role: "member", status: "pending"});
-    $("send").disabled = false;
-    error ? fail(error.code === "23505" ? "الشخص ده مدعو بالفعل" : error) : route();
-  };
-  wire();
-}
-
-/* ---------- ADD TRANSACTION SHEET ---------- */
-function openSheet(accId) {
-  if (!S.acc.length) { alert("اعمل حساب الأول."); location.hash = "#/acc"; return; }
-  const cur = accId || (location.hash.match(/^#\/a\/(.+)$/) || [])[1] || S.acc[0].id;
-  const close = () => { $("modal").innerHTML = ""; document.removeEventListener("keydown", esc_); };
-  const esc_ = e => e.key === "Escape" && close();
-  document.addEventListener("keydown", esc_);
-  $("modal").innerHTML = `<div class="ov" id="ov"><form class="glass sheet" role="dialog" aria-modal="true" aria-labelledby="sh" novalidate>
-    <div class="top"><button type="button" class="ib" id="x" aria-label="إغلاق">✕</button><h2 id="sh" style="font-size:1.2rem">إضافة معاملة</h2><span style="width:42px"></span></div>
-    <div class="seg"><button type="button" id="kE" class="e">مصروف</button><button type="button" id="kI" class="i">دخل</button></div>
-    <label for="sa">الحساب</label><select id="sa">${S.acc.map(a => `<option value="${a.id}" ${a.id === cur ? "selected" : ""}>${esc(a.name)}</option>`).join("")}</select>
-    <label for="amt">المبلغ</label><input id="amt" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00">
-    <label for="cat">التصنيف</label><select id="cat">${CATS.map(c => `<option>${c}</option>`).join("")}</select>
-    <label for="dt">التاريخ</label><input id="dt" type="date" value="${today()}">
-    <label for="note">ملاحظة (اختياري)</label><input id="note" placeholder="مثال: وجبة غداء">
-    <p class="err" id="err" role="alert"></p><button class="btn w" id="save" type="submit">حفظ</button></form></div>`;
-  $("ov").onclick = e => e.target.id === "ov" && close();
-  $("x").onclick = close;
   const setKind = k => { kind = k; $("kE").classList.toggle("on", k === "expense"); $("kI").classList.toggle("on", k === "income"); };
   $("kE").onclick = () => setKind("expense"); $("kI").onclick = () => setKind("income"); setKind(kind);
-  $("amt").focus();
-  $("save").closest("form").onsubmit = async e => {
-    e.preventDefault(); if (saving) return;
+  $("save").onclick = async () => {
     const amount = parseFloat($("amt").value);
     if (!(amount > 0)) return fail("اكتب مبلغ صحيح");
-    saving = true; $("save").disabled = true; $("save").textContent = "بحفظ...";
-    const row = {id: (crypto.randomUUID ? crypto.randomUUID() : `local-${Date.now()}-${Math.random().toString(16).slice(2)}`), account_id: $("sa").value, user_id: user.id, kind, amount, category: $("cat").value, note: $("note").value.trim(), date: $("dt").value || today()};
-    // Persist locally before attempting the network, so a connection drop never loses the entry.
-    const queue = readJSON(queueKey(), []);
-    queue.push(row); writeJSON(queueKey(), queue);
-    S.tx = [row, ...S.tx.filter(x => x.id !== row.id)]; cacheState();
-    if (isOnline()) await syncOutbox();
-    saving = false;
-    close(); route();
+    const {error} = await db.from("transactions").insert({account_id: id, user_id: user.id, kind, amount, category: $("cat").value, note: $("note").value.trim(), date: $("dt").value || today()});
+    error ? fail(error) : accountView(id);
+  };
+  document.querySelectorAll("[data-del]").forEach(b => b.onclick = async () => {
+    if (confirm("تمسح المعاملة دي؟")) { await db.from("transactions").delete().eq("id", b.dataset.del); accountView(id); }
+  });
+  document.querySelectorAll("[data-rm]").forEach(b => b.onclick = async () => {
+    if (confirm("تشيل العضو ده؟")) { await db.from("account_members").delete().eq("id", b.dataset.rm); accountView(id); }
+  });
+  if (isOwner) $("delacc").onclick = async () => {
+    if (confirm("هيتمسح الحساب وكل معاملاته لكل الأعضاء. متأكد؟")) { await db.from("accounts").delete().eq("id", id); location.hash = ""; }
+  };
+  if (isOwner) $("send").onclick = async () => {
+    const email = $("inv").value.trim().toLowerCase(); if (!email) return fail("اكتب الإيميل");
+    const {error} = await db.from("account_members").insert({account_id: id, email, role: "member", status: "pending"});
+    error ? fail(error.code === "23505" ? "الشخص ده مدعو بالفعل" : error) : accountView(id);
   };
 }
 
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
-db.auth.getSession().then(({data}) => { user = data.session?.user ?? null; route(); setOfflineNotice(); });
+db.auth.getSession().then(({data}) => { user = data.session?.user ?? null; route(); });
 </script>
 </body>
 </html>
