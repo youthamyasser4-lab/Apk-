@@ -1,0 +1,10 @@
+{
+  "name": "مصاريفنا",
+  "short_name": "مصاريفنا",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#cfe6fb",
+  "theme_color": "#155A91",
+  "lang": "ar",
+  "dir": "rtl"
+}
