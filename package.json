@@ -1,0 +1,20 @@
+{
+  "name": "masarefni-offline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "مصاريفنا - Android offline-first wrapper using the original working UI",
+  "scripts": {
+    "copy:web": "node scripts-copy-web.mjs",
+    "android:init": "npm run copy:web && cap add android",
+    "android:sync": "npm run copy:web && cap sync android",
+    "android:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor-community/sqlite": "^7.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}

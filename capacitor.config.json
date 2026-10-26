@@ -1,0 +1,9 @@
+{
+  "appId": "com.masarifna.offline",
+  "appName": "مصاريفنا",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 0 }
+  }
+}
